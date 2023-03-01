@@ -1,6 +1,7 @@
 // modules
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { GlobalStyle } from './styles/global'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 // pages
@@ -17,6 +18,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
     <React.StrictMode>
         <Router>
+            <GlobalStyle />
             <Header />
             <Routes>
                 <Route exact path="/" element={<Home />} />
