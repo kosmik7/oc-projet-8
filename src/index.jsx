@@ -1,18 +1,10 @@
 // modules
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { GlobalStyle } from './styles/global'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-
-// pages
-import Home from './pages/Home'
-import FicheLogement from './pages/FicheLogement'
-import About from './pages/About'
-import Error from './pages/Error'
-
-// composants
-import Header from './components/Header'
-import Footer from './components/Footer'
+import { GlobalStyle } from './styles/global'
+import { Home, FicheLogement, About, Error } from './pages'
+import { Header, Footer } from './components'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(

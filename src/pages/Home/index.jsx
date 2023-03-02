@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { colors, device, BaseContainer } from '../../styles/global'
-import Banner from '../../components/Banner'
-import Card from '../../components/Card'
+import { Banner, Card } from '../../components'
 import data from '../../assets/logements.json'
 import bannerImage from '../../assets/banner-home.webp'
 
