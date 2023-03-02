@@ -26,7 +26,7 @@ const Details = styled.details`
     }
 
     &[open] ${Chevron} {
-        transform: rotate(180deg);
+        transform: rotateX(180deg);
     }
 
     @media ${device.medium} {
