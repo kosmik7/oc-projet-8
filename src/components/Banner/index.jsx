@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
+
 import { device, flexCenter, BaseContainer } from '../../styles/global'
 
 const Container = styled(BaseContainer)`
@@ -39,6 +41,12 @@ const Text = styled.p`
         font-size: 48px;
     }
 `
+
+Banner.propTypes = {
+    image: PropTypes.string.isRequired,
+    imageAlt: PropTypes.string.isRequired,
+    text: PropTypes.string,
+}
 
 export default function Banner({ image, imageAlt, text }) {
     return (

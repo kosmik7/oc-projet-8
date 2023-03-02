@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const Container = styled.div`
     position: relative;
@@ -35,6 +36,11 @@ const Text = styled.p`
     font-size: 18px;
     z-index: 10;
 `
+
+Card.propTypes = {
+    title: PropTypes.string.isRequired,
+    cover: PropTypes.string.isRequired,
+}
 
 export default function Card({ title, cover }) {
     return (
