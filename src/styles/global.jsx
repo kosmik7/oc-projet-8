@@ -28,6 +28,11 @@ export const GlobalStyle = createGlobalStyle`
 `
 
 // Variables
+export const colors = {
+    primary: '#FF6060',
+    background: '#F6F6F6',
+}
+
 export const breakpoints = {
     small: '540px',
     medium: '980px',
@@ -38,11 +43,6 @@ export const device = {
     small: `screen and (min-width: ${breakpoints.small})`,
     medium: `screen and (min-width: ${breakpoints.medium})`,
     large: `screen and (min-width: ${breakpoints.large})`,
-}
-
-export const colors = {
-    primary: '#FF6060',
-    background: '#F6F6F6',
 }
 
 // Mixins
