@@ -4,6 +4,7 @@ import { colors, device, BaseContainer } from '../../styles/global'
 import Banner from '../../components/Banner'
 import Card from '../../components/Card'
 import data from '../../assets/logements.json'
+import bannerImage from '../../assets/banner-home.webp'
 
 const GridContainer = styled(BaseContainer)`
     margin-top: 22px;
@@ -24,7 +25,11 @@ const GridContainer = styled(BaseContainer)`
 export default function Home() {
     return (
         <React.Fragment>
-            <Banner />
+            <Banner
+                image={bannerImage}
+                imageAlt="Un paysage de falaises en bord de mer"
+                text="Chez vous, partout et ailleurs"
+            />
             <GridContainer largeWidth>
                 {data.map((item) => (
                     <Card key={item.id} title={item.title} cover={item.cover} />

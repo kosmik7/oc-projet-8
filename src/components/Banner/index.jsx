@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import bannerImage from '../../assets/banner-home.jpg'
 import { device, flexCenter, BaseContainer } from '../../styles/global'
 
 const Container = styled(BaseContainer)`
@@ -7,14 +6,14 @@ const Container = styled(BaseContainer)`
 
     border-radius: 10px;
     overflow: hidden;
-    margin-top: 16px;
+    margin-top: 18px;
 
     ${flexCenter}
     justify-content: flex-start;
 
     @media ${device.medium} {
         border-radius: 25px;
-        margin-top: 62px;
+        margin-top: 48px;
         justify-content: center;
     }
 `
@@ -41,14 +40,11 @@ const Text = styled.p`
     }
 `
 
-export default function Banner() {
+export default function Banner({ image, imageAlt, text }) {
     return (
         <Container largeWidth>
-            <Image
-                src={bannerImage}
-                alt="Un paysage de falaises en bord de mer"
-            />
-            <Text>Chez vous, partout et ailleurs</Text>
+            <Image src={image} alt={imageAlt} />
+            {text && <Text>{text}</Text>}
         </Container>
     )
 }
