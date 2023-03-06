@@ -12,6 +12,7 @@ root.render(
         <Router>
             <GlobalStyle />
             <Header />
+            <main>
             <Routes>
                 <Route exact path="/" element={<Home />} />
                 <Route
@@ -22,6 +23,7 @@ root.render(
                 <Route exact path="/a-propos" element={<About />} />
                 <Route element={<Error />} />
             </Routes>
+            </main>
             <Footer />
         </Router>
     </React.StrictMode>

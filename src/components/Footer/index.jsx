@@ -1,24 +1,28 @@
 import styled from 'styled-components'
 import { ReactComponent as LogoSrc } from '../../assets/logo.svg'
-import { device } from '../../styles/global'
+import { device, BaseContainer } from '../../styles/global'
 
 const Wrapper = styled.div`
+    width: 100%;
+    margin-top: 20px;
     background-color: #000;
+
+    @media ${device.medium} {
+        margin-top: 40px;
+    }
 `
 
-const Container = styled.div`
+const Container = styled(BaseContainer)`
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
 
-    margin-top: 20px;
     padding: 60px 0;
     color: #fff;
 
     @media ${device.medium} {
         gap: 25px;
-        margin-top: 40px;
     }
 `
 

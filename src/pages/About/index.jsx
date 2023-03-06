@@ -21,7 +21,7 @@ export default function Home() {
     return (
         <React.Fragment>
             <Banner image={bannerImage} imageAlt="Un paysage montagneux" />
-            <Container mediumWidth>
+            <Container width="medium">
                 {data.map((item) => (
                     <Collapse
                         key={item.id}

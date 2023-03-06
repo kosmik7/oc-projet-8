@@ -24,6 +24,17 @@ export const GlobalStyle = createGlobalStyle`
     a {
         text-decoration: inherit;
         color: inherit;
+
+        &:hover {
+        text-decoration: underline;
+        }
+    }
+    // css-grid sur #root afin de garder le footer en bas de page en toute circonstances (header -> main:1fr -> footer)
+    #root {
+        min-height: 100%;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        grid-template-columns: 100%;
     }
 `
 
@@ -36,7 +47,7 @@ export const colors = {
 export const breakpoints = {
     small: '540px',
     medium: '980px',
-    large: '1280px',
+    large: '1320px',
 }
 
 export const device = {
@@ -54,39 +65,43 @@ export const flexCenter = css`
 
 // Composants
 export const BaseContainer = styled.div`
-    ${({ mediumWidth }) =>
-        mediumWidth &&
-        css`
-            margin: 0 20px;
-            @media ${device.small} {
-                margin: 0 40px;
-            }
-            @media ${device.medium} {
-                max-width: 840px;
-                margin: auto;
-            }
-            @media ${device.large} {
-                max-width: 1024px;
-            }
-        `}
-    ${({ largeWidth }) =>
-        largeWidth &&
-        css`
-            margin: 0 20px;
-            @media ${device.small} {
-                margin: 0 40px;
-            }
-            @media ${device.medium} {
-                max-width: 960px;
-                margin: auto;
-            }
-            @media ${device.large} {
-                max-width: 1240px;
-            }
-        `}
-    ${({ fullWidth }) =>
-        fullWidth &&
-        css`
-            max-width: 100%;
-        `}
+    // Conteneur par défaut avec 3 largeurs disponibles: medium - default - full
+    ${(props) => {
+        switch (props.width) {
+            case 'full':
+                return css`
+                    max-width: 100%;
+                `
+            case 'medium':
+                return css`
+                    padding: 0 20px;
+                    margin: auto;
+                    @media ${device.small} {
+                        padding: 0 40px;
+                    }
+                    @media ${device.medium} {
+                        max-width: 840px;
+                        padding: 0;
+                    }
+                    @media ${device.large} {
+                        max-width: 1024px;
+                    }
+                `
+            default:
+                return css`
+                    padding: 0 20px;
+                    margin: auto;
+                    @media ${device.small} {
+                        padding: 0 40px;
+                    }
+                    @media ${device.medium} {
+                        max-width: 900px;
+                        padding: 0;
+                    }
+                    @media ${device.large} {
+                        max-width: 1240px;
+                    }
+                `
+        }
+    }}
 `

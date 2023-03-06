@@ -5,9 +5,6 @@ import { device, flexCenter, BaseContainer } from '../../styles/global'
 
 const Container = styled(BaseContainer)`
     position: relative;
-
-    border-radius: 10px;
-    overflow: hidden;
     margin-top: 18px;
 
     ${flexCenter}
@@ -23,6 +20,8 @@ const Container = styled(BaseContainer)`
 const Image = styled.img`
     height: 112px;
     width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
     object-fit: cover;
     filter: brightness(70%);
 
@@ -50,7 +49,7 @@ Banner.propTypes = {
 
 export default function Banner({ image, imageAlt, text }) {
     return (
-        <Container largeWidth>
+        <Container>
             <Image src={image} alt={imageAlt} />
             {text && <Text>{text}</Text>}
         </Container>

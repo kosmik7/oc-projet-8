@@ -5,6 +5,7 @@ import { ReactComponent as LogoSrc } from '../../assets/logo.svg'
 import { colors, device, BaseContainer } from '../../styles/global'
 
 const Container = styled(BaseContainer)`
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,6 +18,7 @@ const Container = styled(BaseContainer)`
 `
 
 const Logo = styled(LogoSrc)`
+    width: 100%;
     height: 48px;
     color: ${colors.primary};
     flex: 1;
@@ -49,7 +51,7 @@ const NavLink = styled(Link)`
 
 export default function Header() {
     return (
-        <Container largeWidth>
+        <Container>
             <Link to="/">
                 <Logo role="img" title="Logo de Kasa" />
             </Link>

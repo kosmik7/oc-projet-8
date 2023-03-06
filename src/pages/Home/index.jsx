@@ -5,15 +5,16 @@ import { Banner, Card } from '../../components'
 import data from '../../assets/logements.json'
 import bannerImage from '../../assets/banner-home.webp'
 
-const GridContainer = styled(BaseContainer)`
+const GridContainer = styled.div`
     margin-top: 22px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr;
     gap: 20px;
 
-    @media ${device.medium} {
+    @media ${device.small} {
         margin-top: 42px;
         gap: 60px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 
         padding: 50px;
         background-color: ${colors.background};
@@ -29,11 +30,17 @@ export default function Home() {
                 imageAlt="Un paysage de falaises en bord de mer"
                 text="Chez vous, partout et ailleurs"
             />
-            <GridContainer largeWidth>
-                {data.map((item) => (
-                    <Card key={item.id} title={item.title} cover={item.cover} />
-                ))}
-            </GridContainer>
+            <BaseContainer>
+                <GridContainer>
+                    {data.map((item) => (
+                        <Card
+                            key={item.id}
+                            title={item.title}
+                            cover={item.cover}
+                        />
+                    ))}
+                </GridContainer>
+            </BaseContainer>
         </React.Fragment>
     )
 }
