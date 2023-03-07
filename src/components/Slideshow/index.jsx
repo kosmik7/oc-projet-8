@@ -21,13 +21,13 @@ const Image = styled.img`
     height: 255px;
     object-fit: cover;
 
-    border-radius: 25px;
+    border-radius: 10px;
     overflow: hidden;
 
     @media ${device.small} {
         height: 355px;
         margin-top: 42px;
-        border-radius: 10px;
+        border-radius: 25px;
     }
 
     @media ${device.medium} {

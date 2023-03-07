@@ -17,12 +17,12 @@ const Details = styled.details`
     width: 100%;
     font-size: 12px;
     color: ${colors.primary};
-    background-color: ${colors.background};
     border-radius: 0 0 5px 5px;
 
     & > p {
         padding: 20px;
         font-weight: 400;
+        background-color: ${colors.background};
     }
 
     &[open] ${Chevron} {
@@ -54,7 +54,7 @@ const Summary = styled.summary`
 
 Collapse.propTypes = {
     title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
+    description: PropTypes.node.isRequired,
 }
 
 export default function Collapse({ title, description }) {
