@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
-const Container = styled.div`
+const Container = styled(Link)`
     position: relative;
     aspect-ratio: 1/1;
 
@@ -40,11 +41,12 @@ const Text = styled.p`
 Card.propTypes = {
     title: PropTypes.string.isRequired,
     cover: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
 }
 
-export default function Card({ title, cover }) {
+export default function Card({ title, cover, id }) {
     return (
-        <Container>
+        <Container to={`/logement/${id}`} state={{ from: 'occupation' }}>
             <Image src={cover} alt="photo" />
             <Text>{title}</Text>
         </Container>
