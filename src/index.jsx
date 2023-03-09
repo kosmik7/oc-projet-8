@@ -1,7 +1,12 @@
 // modules
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import {
+    Navigate,
+    BrowserRouter as Router,
+    Routes,
+    Route,
+} from 'react-router-dom'
 import { GlobalStyle } from './styles/global'
 import { Home, Logement, About, Error } from './pages'
 import { Header, Footer } from './components'
@@ -17,7 +22,11 @@ root.render(
                     <Route path="/" element={<Home />} />
                     <Route path="/logement/:id" element={<Logement />} />
                     <Route path="/a-propos" element={<About />} />
-                    <Route path="*" element={<Error />} />
+                    <Route path="erreur" element={<Error />} />
+                    <Route
+                        path="*"
+                        element={<Navigate to="/erreur" replace />}
+                    />
                 </Routes>
             </main>
             <Footer />

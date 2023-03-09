@@ -1,5 +1,5 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { colors, device, BaseContainer } from '../../styles/global'
 import { Slideshow, Collapse } from '../../components'
@@ -156,7 +156,12 @@ export default function Logement() {
     const { id } = useParams()
     const logement = data.find((item) => item.id === id)
 
-    return (
+    const navigate = useNavigate()
+    useEffect(() => {
+        logement ?? navigate('/erreur', { replace: true })
+    }, [logement, navigate])
+
+    return logement ? (
         <React.Fragment>
             <Slideshow pictures={logement.pictures} />
             <Container>
@@ -203,5 +208,7 @@ export default function Logement() {
                 </WrapperCollapse>
             </Container>
         </React.Fragment>
+    ) : (
+        ''
     )
 }
