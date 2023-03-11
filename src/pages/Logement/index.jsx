@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { colors, device, BaseContainer } from '../../styles/global'
 import { Slideshow, Collapse } from '../../components'
+import { ReactComponent as IcoStar } from '../../assets/star.svg'
 import data from '../../assets/logements.json'
 
 const Container = styled(BaseContainer)`
@@ -147,8 +148,13 @@ const HostProfile = styled.div`
 `
 const HostRating = styled.p`
     font-size: 18px;
+
     @media ${device.small} {
         font-size: 36px;
+    }
+
+    & span {
+        color: #e3e3e3;
     }
 `
 
@@ -184,9 +190,9 @@ export default function Logement() {
                             />
                         </HostProfile>
                         <HostRating>
-                            {'★'.repeat(logement.rating) +
-                                '☆'.repeat(5 - logement.rating)}
-                        </HostRating>{' '}
+                            {'★'.repeat(logement.rating)}
+                            <span>{'★'.repeat(5 - logement.rating)}</span>
+                        </HostRating>
                     </WrapperProfile>
                 </WrapperInfo>
                 <WrapperCollapse>
